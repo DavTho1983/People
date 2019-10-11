@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5fc380ad-df94-4799-bbad-1220c7654cde" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiSky/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/hiSky/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +44,7 @@
       <updated>1570724523119</updated>
       <workItem from="1570724550490" duration="1440000" />
       <workItem from="1570726304872" duration="4295000" />
-      <workItem from="1570735841215" duration="661000" />
+      <workItem from="1570735841215" duration="2031000" />
     </task>
     <servers />
   </component>
