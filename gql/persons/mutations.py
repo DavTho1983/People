@@ -21,6 +21,13 @@ class PersonInputType(InputObjectType):
     address = String()
 
 
+class PersonEditInputType(InputObjectType):
+    id = String()
+    first_name = String()
+    last_name = String()
+    address = String()
+
+
 class PersonCreate(Mutation):
     class Arguments:
         input = PersonInputType(required=True)
@@ -33,11 +40,28 @@ class PersonCreate(Mutation):
         return PersonCreate(person=serializer.save())
 
 
+class PersonEdit(Mutation):
+    class Arguments:
+        id = String(required=True)
+        input = PersonEditInputType(required=True)
+    person = Field(PersonType)
+
+    @classmethod
+    def mutate(cls, root, info, **data):
+        serializer = PersonSerializer(data=data.get('input'))
+        serializer.is_valid(raise_exception=True)
+        person = Person.objects.get(id=data.get('id'))
+        print("PERSON", serializer.data)
+        person.first_name = serializer.data['first_name']
+        person.last_name = serializer.data['last_name']
+        person.address = serializer.data['address']
+        return PersonEdit(person=person.save())
+
+
 class PersonDelete(Mutation):
     class Arguments:
         id = ID(required=True)
     ok = Boolean()
-
 
     @classmethod
     def mutate(cls, root, info, **data):

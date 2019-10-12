@@ -1,6 +1,6 @@
 from graphene import Argument, Field, ID, ObjectType, Schema
 from graphene_django import DjangoConnectionField
-from .persons.mutations import PersonCreate, PersonDelete
+from .persons.mutations import PersonCreate, PersonEdit, PersonDelete
 
 from people.models import Person
 from .persons.types import PersonType
@@ -19,6 +19,7 @@ class Query(ObjectType):
 
 class Mutation(ObjectType):
     person_create = PersonCreate.Field()
+    person_edit = PersonEdit.Field()
     person_delete = PersonDelete.Field()
 
 
