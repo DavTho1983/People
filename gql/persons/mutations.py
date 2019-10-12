@@ -60,7 +60,7 @@ class PersonEdit(Mutation):
 
 class PersonDelete(Mutation):
     class Arguments:
-        id = ID(required=True)
+        id = String(required=True)
     ok = Boolean()
 
     @classmethod
