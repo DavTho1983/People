@@ -51,7 +51,6 @@ class PersonEdit(Mutation):
         serializer = PersonSerializer(data=data.get('input'))
         serializer.is_valid(raise_exception=True)
         person = Person.objects.get(id=data.get('id'))
-        print("PERSON", serializer.data)
         person.first_name = serializer.data['first_name']
         person.last_name = serializer.data['last_name']
         person.address = serializer.data['address']
